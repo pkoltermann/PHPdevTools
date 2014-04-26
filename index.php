@@ -1,5 +1,5 @@
 <?php
-error_reporting('none');
+//error_reporting('none');
 require('libs/Serializer.php');
 
 $serialiser = new Serializer();
@@ -8,6 +8,13 @@ $outFormats = $serialiser->outputFormats;
 
 if (!empty($_POST['data'])) {
     $data = $_POST['data'];
+        
+    if (get_magic_quotes_gpc()) {
+        $data['source'] = stripslashes($data['source']);
+    } else {
+        $data['source'] = $data['source'];
+    }
+        
     try {
     $result = $serialiser->convert($data);
     } catch( Exception $ex) {
