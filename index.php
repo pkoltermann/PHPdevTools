@@ -50,30 +50,29 @@ if (!empty($_POST['data'])) {
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Dev tools</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Serializer</a></li>
-              <li><a href="#about">Array Editor</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+              <div class="container">
+                  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="brand" href="#">Dev tools</a>
+                  <div class="nav-collapse collapse">
+                      <ul class="nav">
+                          <li class="active"><a href="#">Serializer</a></li>
+                          <li><a href="#about">Array Editor</a></li>
+                      </ul>
+                  </div><!--/.nav-collapse -->
+              </div>
+          </div>
       </div>
-    </div>
+      <a href="https://github.com/pkoltermann/PHPdevTools"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1040;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+      <div class="container">
 
-    <div class="container">
-
-      <h1>Serializer</h1>
-      <p>Allows to easily perform array serialization (also to json).</p>
+          <h1>Serializer</h1>
+          <p>Allows to easily perform array serialization (also to json).</p>
 
       <form id="serializerForm" method="post">
           <div class="row-fluid">
@@ -81,7 +80,7 @@ if (!empty($_POST['data'])) {
 
               <select class="span2" name="data[from]">
                   <?php foreach ($inFormats as $format) : ?>
-                      <option <?php (!empty($data['from']) && $data['from'] === $format) ? 'selected="selected"' : ''; ?>><?= $format ?></option>
+                      <option <?= (!empty($data['from']) && $data['from'] === $format) ? 'selected="selected"' : ''; ?>><?= $format ?></option>
                   <?php endforeach; ?>
               </select>
           </div>
@@ -89,7 +88,7 @@ if (!empty($_POST['data'])) {
               <label class="span2">To format</label>
               <select class="span2 lfloat" name="data[to]">
                   <?php foreach ($outFormats as $format) : ?>
-                      <option <?php (!empty($data['to']) && $data['to'] === $format) ? 'selected="selected"' : ''; ?>><?= $format ?></option>
+                      <option <?= (!empty($data['to']) && $data['to'] === $format) ? 'selected="selected"' : ''; ?>><?= $format ?></option>
                   <?php endforeach; ?>
               </select>
               <div class="span1">
@@ -109,12 +108,12 @@ if (!empty($_POST['data'])) {
       </form>
 
     </div> <!-- /container -->
-
+    
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
-    <script src="assets/js/bootstrap-transition.js"></script>
+<!--    <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
     <script src="assets/js/bootstrap-modal.js"></script>
     <script src="assets/js/bootstrap-dropdown.js"></script>
@@ -126,7 +125,7 @@ if (!empty($_POST['data'])) {
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
-<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>-->
 
   </body>
 </html>
