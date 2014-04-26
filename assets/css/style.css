@@ -1,0 +1,11 @@
+.lfloat {
+    float: left !important;
+}
+.data-source, .data-result {
+    width: 100%;
+    min-height: 300px;
+}
+
+.error textarea {
+    border: 2px solid red;
+}
