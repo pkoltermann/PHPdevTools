@@ -67,31 +67,32 @@ class Serializer
     
     public function decodeJson($str)
     {
-        return json_decode($str);
+        return json_decode($str, true);
     }
     
-    public function encodeSerialozed($var)
+    public function encodeSerialized($var)
     {
         return serialize($var);
     }
     
     protected function encodeJson($var)
     {
-        return json_encode($var);
+        return json_encode($var, JSON_PRETTY_PRINT);
     }
     
-    public function encodeArray($var)
+    public function encodeArray($var, $indent = '')
     {
         if (!is_array($var)) {
-            return $var;
+            return "'{$var}'";
         }
         $result = "[\n";
+        $newIndent = $indent . "    ";
         
         foreach ($var as $key=>$value) {
-            $result .= "\t'{$key}' => '{$value}'\n";
+            $result .= "{$newIndent}'{$key}' => {$this->encodeArray($value, $newIndent)}\n";
         }
         
-        $result .= "]\n";
+        $result .= "{$indent}],\n";
         return $result;
     }
 }
