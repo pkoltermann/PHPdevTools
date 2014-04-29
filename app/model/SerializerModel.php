@@ -11,7 +11,7 @@
  *
  * @author pkoltermann
  */
-class Serializer
+class SerializerModel
 {
     
     protected $inputFormats = array(
