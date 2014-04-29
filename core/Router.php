@@ -90,4 +90,9 @@ class Router
         $modelPath = Router::$router->getAppPath() . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . ucfirst($model) . 'Model.php';
         require_once $modelPath;
     }
+    
+    public function getController()
+    {
+        return $this->activeController;
+    }
 }

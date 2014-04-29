@@ -43,8 +43,9 @@
                   <a class="brand" href="#">Dev tools</a>
                   <div class="nav-collapse collapse">
                       <ul class="nav">
-                          <li class="active"><a href="?">Serializer</a></li>
-                          <li><a href="?r=urlencode">Array Editor</a></li>
+                          <?php $controllerName = Router::$router->getController(); ?>
+                          <li <?= ($controllerName === 'serializer') ? 'class="active"' : '' ?>><a href="?">Serializer</a></li>
+                          <li <?= ($controllerName === 'urlencode') ? 'class="active"' : '' ?>><a href="?r=urlencode">Urlencode</a></li>
                       </ul>
                   </div><!--/.nav-collapse -->
               </div>
