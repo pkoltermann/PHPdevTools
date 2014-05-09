@@ -1,18 +1,9 @@
       <form id="serializerForm" method="post">
           <div class="row-fluid">
-              <label class="span2">From format</label>
-
-              <select class="span2" name="data[from]">
-                  <?php foreach ($inFormats as $format) : ?>
-                      <option <?= (!empty($data['from']) && $data['from'] === $format) ? 'selected="selected"' : ''; ?>><?= $format ?></option>
-                  <?php endforeach; ?>
-              </select>
-          </div>
-          <div class="row-fluid">
-              <label class="span2">To format</label>
-              <select class="span2 lfloat" name="data[to]">
-                  <?php foreach ($outFormats as $format) : ?>
-                      <option <?= (!empty($data['to']) && $data['to'] === $format) ? 'selected="selected"' : ''; ?>><?= $format ?></option>
+              <label class="span2">Operation</label>
+              <select class="span2 lfloat" name="data[operation]">
+                  <?php foreach ($operations as $operation) : ?>
+                      <option <?= (!empty($data['operation']) && $data['operation'] === $operation) ? 'selected="selected"' : ''; ?>><?= $operation ?></option>
                   <?php endforeach; ?>
               </select>
               <div class="span1">

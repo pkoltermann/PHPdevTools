@@ -7,18 +7,18 @@ class Controller
     protected $title = '';
     protected $description = '';
     
-    protected function render($view, $data)
+    protected function render($_view, $_dataParameters)
     {
-        $viewPath = Router::$router->getAppPath() . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . $view . '.php';
+        $_viewPath = Router::$router->getAppPath() . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . $_view . '.php';
         ob_start();
-        extract($data, EXTR_SKIP);
-        require_once $viewPath;
+        extract($_dataParameters, EXTR_SKIP);
+        require_once $_viewPath;
         
         $this->content = ob_get_clean();
         
-        $layoutPath = Router::$router->getAppPath() . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . $this->layout . '.php';
+        $_layoutPath = Router::$router->getAppPath() . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . $this->layout . '.php';
         
-        require $layoutPath;
+        require $_layoutPath;
         
     }
 }
