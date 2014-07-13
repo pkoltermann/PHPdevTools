@@ -46,6 +46,7 @@
                           <?php $controllerName = Router::$router->getController(); ?>
                           <li <?= ($controllerName === 'serializer') ? 'class="active"' : '' ?>><a href="?">Serializer</a></li>
                           <li <?= ($controllerName === 'urlencode') ? 'class="active"' : '' ?>><a href="?r=urlencode">Urlencode</a></li>
+                          <li <?= ($controllerName === 'urlencode') ? 'class="active"' : '' ?>><a href="?r=ip2long">IP2Long</a></li>
                       </ul>
                   </div><!--/.nav-collapse -->
               </div>
